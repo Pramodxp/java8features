@@ -1,6 +1,5 @@
 package com.learnjava.functionalinterfaces;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiConsumer;
 
