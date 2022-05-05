@@ -2,7 +2,6 @@ package com.learnjava.streams;
 
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -21,7 +20,7 @@ public class StreamsExample {
 		 * 
 		 * want students whose grade level is greater than or equal 3.
 		 * 
-		 * gpa is greater tahn or equal to 3.9.
+		 * gpa is greater than or equal to 3.9.
 		 */
 
 		Predicate<Student> studentGradeLevelPredicate = (student) -> student.getGradeLevel() >= 3;
