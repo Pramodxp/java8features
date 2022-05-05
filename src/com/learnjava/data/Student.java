@@ -3,12 +3,17 @@ package com.learnjava.data;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author pramodr
+ *
+ */
 public class Student {
 	private String name;
 	private int gradeLevel;
 	private double gpa;
 	private String gender;
 	List<String> activities = new ArrayList<>();
+	private int noteBook;
 
 	public Student() {
 	}
@@ -23,6 +28,16 @@ public class Student {
 		this.gpa = gpa;
 		this.gender = gender;
 		this.activities = activities;
+	}
+
+	public Student(String name, int gradeLevel, double gpa, String gender, List<String> activities, int noteBook) {
+		super();
+		this.name = name;
+		this.gradeLevel = gradeLevel;
+		this.gpa = gpa;
+		this.gender = gender;
+		this.activities = activities;
+		this.noteBook = noteBook;
 	}
 
 	public String getGender() {
@@ -69,10 +84,18 @@ public class Student {
 		System.out.println(this.activities);
 	}
 
+	public int getNoteBook() {
+		return noteBook;
+	}
+
+	public void setNoteBook(int noteBook) {
+		this.noteBook = noteBook;
+	}
+
 	@Override
 	public String toString() {
-		return "Student{" + "name='" + name + '\'' + ", gradeLevel=" + gradeLevel + ", gpa=" + gpa + ", gender='"
-				+ gender + '\'' + ", activities=" + activities + '}';
+		return "Student [name=" + name + ", gradeLevel=" + gradeLevel + ", gpa=" + gpa + ", gender=" + gender
+				+ ", activities=" + activities + ", noteBook=" + noteBook + "]";
 	}
 
 }
