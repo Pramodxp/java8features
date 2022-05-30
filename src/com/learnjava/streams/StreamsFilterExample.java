@@ -1,9 +1,7 @@
 package com.learnjava.streams;
 
-import java.util.List;
 import java.util.stream.Collectors;
 
-import com.learnjava.data.Student;
 import com.learnjava.data.StudentDataBase;
 
 /**
