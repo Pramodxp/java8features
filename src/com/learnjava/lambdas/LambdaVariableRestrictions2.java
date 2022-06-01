@@ -15,7 +15,7 @@ public class LambdaVariableRestrictions2 {
 	public static void main(String[] args) {
 		int methodLocalVariable = 4; // local variable.
 		Consumer<Integer> c1 = (i) -> {
-			// we are not allowed to make the changes to the variable declred out side the
+			// we are not allowed to make the changes to the variable declared out side the
 			// scope of lambda.
 			// inside lambda the variable declared out side the lambda scope must be
 			// effectively considered as final.
