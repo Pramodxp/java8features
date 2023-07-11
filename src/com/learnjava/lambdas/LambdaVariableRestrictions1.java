@@ -12,7 +12,7 @@ public class LambdaVariableRestrictions1 {
 		int i = 0;
 
 		Consumer<Integer> c1 = (i1) -> {
-			//we can redeclare the variable already in the scope.
+			//we cant redeclare the variable already in the scope.
 //			int i = 2;
 			System.out.println("value is : " + i);
 		};

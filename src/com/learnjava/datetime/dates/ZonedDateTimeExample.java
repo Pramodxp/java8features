@@ -2,7 +2,9 @@ package com.learnjava.datetime.dates;
 
 import java.time.Clock;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
@@ -10,7 +12,19 @@ import java.time.ZonedDateTime;
 
 public class ZonedDateTimeExample {
 	public static void main(String[] args) {
-		ZonedDateTime zonedDateTime = ZonedDateTime.now();
+		
+		///combine date and time of est and utc
+		ZonedDateTime utc = ZonedDateTime.of(LocalDate.now(), LocalTime.of(15, 0, 0, 0), ZoneId.of("UTC"));
+		ZonedDateTime est = ZonedDateTime.of(LocalDate.of(2023, 03, 20 ), LocalTime.of(15, 0, 0, 0), ZoneId.of("America/New_York"));
+		est.getOffset();
+//		ZonedDateTime est = utc.withZoneSameInstant(ZoneId.of("America/New_York"));
+		
+//		LocalDateTime ldtPST = LocalDateTime.ofInstant(utc.toInstant(), (ZonedDateTime.now(ZoneId.of("America/New_York"))).getOffset());
+//        System.out.println("PST time without offset         : "+ldtPST);
+
+		ZonedDateTime estInSameDay = ZonedDateTime.of(utc.toLocalDate(), est.toLocalTime(), ZoneId.of("America/New_York"));
+		
+		ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of("America/New_York"));
 		System.out.println("ZonedDateTime : " + zonedDateTime);
 
 		// get offset value and zoneId value form ZonedDateTime.
@@ -59,8 +73,5 @@ public class ZonedDateTimeExample {
 		//add the offset to the localdate and time and returns offsetdateTime.
 		OffsetDateTime offsetDateTime = localDateTime2.atOffset(ZoneOffset.ofHours(-6));
 		System.out.println("offsetDateTime : " + offsetDateTime);
-		
-		
-
 	}
 }
